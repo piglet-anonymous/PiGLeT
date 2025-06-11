@@ -39,7 +39,6 @@ class Piglet(nn.Module):
                          first_aggr=False))
 
         self.weight = torch.nn.Linear(self.out_dim, self.out_dim)
-        self.edge_classifier = nn.Linear(2 * self.out_dim, 1).to(self.device)
         self.structure_loss = Sign_Structure_Loss()
 
         self.reset_parameters()
